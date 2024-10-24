@@ -7,4 +7,13 @@
 // Al menos un número.
 // Al menos un carácter especial (por ejemplo, @, #, !, etc.).
 
-$patronPasswords = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])(?:[A-Za-z\d$@!%*?&]|[^ ]){8,}$/";
+$patronPasswords = "/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@#!%*?&])^[A-Za-z\d$#@!%*?&]{8,}$/";
+
+$ejemploContrasena = "abC3#McD436";
+
+if (preg_match($patronPasswords, $ejemploContrasena, $res)){
+    echo "la contraseña $res[0] es valida";
+}else{
+    echo "La contraseña $ejemploContrasena no es valida";
+}
+
