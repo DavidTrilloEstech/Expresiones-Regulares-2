@@ -3,14 +3,20 @@
     //Dado un texto que contiene hashtags (por ejemplo, #programación, #php), crea una función que use preg_match_all() 
     //para extraer todos los hashtags de la cadena y devolverlos en un array.
 
-    $patronHastag = "@\B#[[:alpha:]\d]+\w*\b@";
+    function str_getHashtags(string $cadena, &$matches) {
+        $patronHastag = "@\B#[[:alpha:]\d]+\w*\b@";
 
-    $ejemplo = "#prueba #ejemplo probando #si"; 
+        return preg_match_all($patronHastag, $cadena, $matches);
+    }
 
-    if (preg_match_all($patronHastag, $ejemplo, $arrayHastag)){
-        foreach ($arrayHastag[0] as $hastag){
-            echo $hastag . '<br>';
+    $cadena = "#prueba #ejemplo probando #si"; 
+
+    if (str_getHashtags($cadena, $matches)){
+        foreach ($matches[0] as $match) {
+            echo $match . '<br>';
         }
     }
+
+    
 
 ?>
