@@ -7,7 +7,7 @@
 // Al menos un número.
 // Al menos un carácter especial (por ejemplo, @, #, !, etc.).
 
-function validatePasswordº($password){
+function validatePassword($password){
     $patronPasswords = "/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@#!%*?&])^[A-Za-z\d$#@!%*?&]{8,}$/";
     return preg_match($patronPasswords, $password);
 }
@@ -16,7 +16,7 @@ function validatePasswordº($password){
 
 $password = "abC3#McD436";
 
-if (validatePasswordº($password)){
+if (validatePassword($password)){
     echo "la contraseña $password es valida";
 }else{
     echo "La contraseña $password no es valida";

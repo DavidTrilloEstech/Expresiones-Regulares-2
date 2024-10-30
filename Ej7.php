@@ -2,7 +2,7 @@
 //Ejercicio 7: Extracción de palabras que empiezan con vocales
 //Escribe una función que extraiga todas las palabras que comienzan con una vocal en una cadena de texto.
 function getVocalStartingWords(string $cadena){
-    $patron = "/\b[aeiouAEIOU][[:alpha:]ñ]*\b/";
+    $patron = "/\b[aeiouAEIOUáéíóúÁÉÍÓÚ][[:alpha:]]*\b/u";
     if (preg_match_all($patron, $cadena, $matches)) {
         foreach ($matches[0] as $match) {
             $arrayResult[] = $match;

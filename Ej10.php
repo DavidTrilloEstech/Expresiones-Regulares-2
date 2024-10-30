@@ -4,7 +4,7 @@
 // Una dirección MAC válida tiene el formato XX:XX:XX:XX:XX:XX, donde XX son dos caracteres hexadecimales (0-9, A-F).
 
 function validateMacDirection(string $cadena){
-    $patron = "@^(?:[0-9A-F]{2}:){5}[0-9A-F]{2}$@";
+    $patron = "@^(?:[0-9A-Fa-f]{2}:){5}[0-9A-Fa-f]{2}$@";
 
     return (preg_match($patron,$cadena));
 }

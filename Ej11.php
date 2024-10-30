@@ -11,7 +11,7 @@ function str_squareAllNumbers(string &$str){
     }
 }
 
-$cadena = "Enhorabuena agente 47";
+$cadena = "Hola 2";
 str_squareAllNumbers($cadena);
 echo $cadena;
 
